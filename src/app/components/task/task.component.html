@@ -1,0 +1,28 @@
+<div class="task-header" [formGroup]="taskCheckout">
+  <input
+    type="text"
+    class="task-input"
+    placeholder="Nova tarefa"
+    formControlName="name"
+  />
+  <button (click)="onAddTask()">Adicionar</button>
+</div>
+
+<ul class="task-card">
+  <li
+    [ngClass]="item.completed ? 'completed task-item' : 'task-item'"
+    *ngFor="let item of items"
+  >
+    <span class="task-item-text" (click)="onToggleCompletedTask(item.id)">{{
+      item.name
+    }}</span>
+
+    <div class="actions">
+      <ng-icon
+        name="heroArrowRightCircle"
+        [routerLink]="['/task', item.id]"
+      ></ng-icon>
+      <ng-icon name="heroTrash" (click)="onDeleteTask(item.id)"></ng-icon>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,10 @@
+<div *ngIf="task" class="container-detail">
+  <div>
+    <h1>{{ task.name }}</h1>
+    <p *ngIf="task.completed" class="done">Tarefa concluida</p>
+    <p *ngIf="!task.completed" class="undone">Tarefa Pendente</p>
+    <button routerLink="/">Voltar</button>
+  </div>
+</div>
+
+<h3 *ngIf="!task">Essa tarefa não existe</h3>

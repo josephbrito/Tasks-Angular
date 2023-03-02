@@ -1,0 +1,84 @@
+.task-header {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+
+  .task-input {
+    background: #555;
+    border: none;
+    padding: 10px;
+    width: 60%;
+    color: white;
+    outline: none;
+
+    &::placeholder {
+      color: #ffffff;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      letter-spacing: 1px;
+    }
+
+    &:focus {
+      border: 1px solid #ccc;
+    }
+  }
+
+  button {
+    flex: 1;
+    background: #7fff00;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.task-card {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 2rem;
+
+  .completed {
+    border-left: 5px solid #7fff00;
+  }
+
+  .task-item {
+    background: #555;
+    padding: 20px;
+    min-height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .task-item-text {
+      cursor: pointer;
+    }
+
+    .actions {
+      position: absolute;
+      right: 0;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding-right: 20px;
+      font-size: 1.3rem;
+
+      ng-icon {
+        cursor: pointer;
+
+        &:nth-child(1) {
+          color: #7fff00;
+        }
+        &:nth-child(2) {
+          color: #ff0000;
+        }
+      }
+    }
+  }
+}
